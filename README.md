@@ -5,3 +5,5 @@ launch this server locally in next way:
 
 result: in console of terminal will appear 'server listen on 3000', and if all is ok, you will see in browser after opening 
 'localhost:3000' next message: kuber api is running
+
+WARNING! for token usege please pull token.txt file from repository, but then replace represended there token with your real
