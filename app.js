@@ -44,12 +44,289 @@ app.get('/backups', function(req, res) {
   const requestOptions = {...options};
   requestOptions.path += 'backups';
 
-  https.request(requestOptions, function(response) {
+  /*https.request(requestOptions, function(response) {
     response.pipe(res);
   }).on('error', function(e) {
     res.sendStatus(500);
     console.log(e);
-  }).end();
+  }).end();*/
+  res.json({
+      items: [ {
+          metadata: {
+            name: 'fsdsdfsdfsd',
+            namespace: 'velero',
+            labels: {'aa1': 123, 'aa2': 444,'aa3': 555}
+          },
+          status: {
+            phase: 'Completed',
+            completionTimestamp: '2019-6-20',
+              expiration: '2019-6-21',
+              version: '1.0',
+              startTimestamp: '2019-4-19',
+              validationErrors: '',
+              volumeSnapshotsAttempted: '',
+              volumeSnapshotsCompleted: ''
+          },
+          spec: {
+            includedNamespaces: ['velero', 'velero1'],
+              excludedNamespaces: '',
+              includedResourses: '*',
+              excludedResourses: '<none>',
+              includedClusterResourses: '',
+              labelSelector: {
+                 matchLabels: {
+                   app: 'app'
+                 }
+              },
+              storageLocation: 's3',
+              volumeSnapshotLocations: 'abc',
+              ttl: '123',
+              hooks: {
+                 resources: '12345'
+              }
+          }
+      }, {
+          metadata: {
+              name: 'sdfsdfsdfsdfsd',
+              namespace: 'velero',
+              labels: {'aa1': 123, 'aa2': 444,'aa3': 555}
+          },
+          status: {
+              phase: 'Failed',
+              completionTimestamp: '2019-6-20',
+              expiration: '2019-6-21',
+              version: '1.0',
+              startTimestamp: '2019-4-19',
+              validationErrors: '',
+              volumeSnapshotsAttempted: '',
+              volumeSnapshotsCompleted: ''
+          },
+          spec: {
+              includedNamespaces: ['velero', 'velero1'],
+              excludedNamespaces: '',
+              includedResourses: '*',
+              excludedResourses: '<none>',
+              includedClusterResourses: '',
+              labelSelector: {
+                  matchLabels: {
+                      app: 'app'
+                  }
+              },
+              storageLocation: 's3',
+              volumeSnapshotLocations: 'abc',
+              ttl: '123',
+              hooks: {
+                  resources: '12345'
+              }
+          }
+      }, {
+          metadata: {
+              name: 'dtdreterter',
+              namespace: 'velero',
+              labels: {'aa1': 123, 'aa2': 444,'aa3': 555}
+          },
+          status: {
+              phase: 'Completed',
+              completionTimestamp: '2019-6-20',
+              expiration: '2019-6-21',
+              version: '1.0',
+              startTimestamp: '2019-4-19',
+              validationErrors: '',
+              volumeSnapshotsAttempted: '',
+              volumeSnapshotsCompleted: ''
+          },
+          spec: {
+              includedNamespaces: ['velero', 'velero1'],
+              excludedNamespaces: '',
+              includedResourses: '*',
+              excludedResourses: '<none>',
+              includedClusterResourses: '',
+              labelSelector: {
+                  matchLabels: {
+                      app: 'app'
+                  }
+              },
+              storageLocation: 's3',
+              volumeSnapshotLocations: 'abc',
+              ttl: '123',
+              hooks: {
+                  resources: '12345'
+              }
+          }
+      },
+          {
+              metadata: {
+                  name: '111',
+                  namespace: 'velero',
+                  labels: {'aa1': 123, 'aa2': 444,'aa3': 555}
+              },
+              status: {
+                  phase: 'InProgress',
+                  completionTimestamp: '2019-6-20',
+                  expiration: '2019-6-21',
+                  version: '1.0',
+                  startTimestamp: '2019-4-19',
+                  validationErrors: '',
+                  volumeSnapshotsAttempted: '',
+                  volumeSnapshotsCompleted: ''
+              },
+              spec: {
+                  includedNamespaces: ['velero', 'velero1'],
+                  excludedNamespaces: '',
+                  includedResourses: '*',
+                  excludedResourses: '<none>',
+                  includedClusterResourses: '',
+                  labelSelector: {
+                      matchLabels: {
+                          app: 'app'
+                      }
+                  },
+                  storageLocation: 's3',
+                  volumeSnapshotLocations: 'abc',
+                  ttl: '123',
+                  hooks: {
+                      resources: '12345'
+                  }
+              }
+          }, {
+              metadata: {
+                  name: 'yiyuiyuiyu',
+                  namespace: 'velero',
+                  labels: {'aa1': 123, 'aa2': 444,'aa3': 555}
+              },
+              status: {
+                  phase: 'Completed',
+                  completionTimestamp: '2019-6-20',
+                  expiration: '2019-6-21',
+                  version: '1.0',
+                  startTimestamp: '2019-4-19',
+                  validationErrors: '',
+                  volumeSnapshotsAttempted: '',
+                  volumeSnapshotsCompleted: ''
+              },
+              spec: {
+                  includedNamespaces: ['velero', 'velero1'],
+                  excludedNamespaces: '',
+                  includedResourses: '*',
+                  excludedResourses: '<none>',
+                  includedClusterResourses: '',
+                  labelSelector: {
+                      matchLabels: {
+                          app: 'app'
+                      }
+                  },
+                  storageLocation: 's3',
+                  volumeSnapshotLocations: 'abc',
+                  ttl: '123',
+                  hooks: {
+                      resources: '12345'
+                  }
+              }
+          }, {
+              metadata: {
+                  name: 'rtytrytr',
+                  namespace: 'velero',
+                  labels: {'aa1': 123, 'aa2': 444,'aa3': 555}
+              },
+              status: {
+                  phase: 'Pending',
+                  completionTimestamp: '2019-6-20',
+                  expiration: '2019-6-21',
+                  version: '1.0',
+                  startTimestamp: '2019-4-19',
+                  validationErrors: '',
+                  volumeSnapshotsAttempted: '',
+                  volumeSnapshotsCompleted: ''
+              },
+              spec: {
+                  includedNamespaces: ['velero', 'velero1'],
+                  excludedNamespaces: '',
+                  includedResourses: '*',
+                  excludedResourses: '<none>',
+                  includedClusterResourses: '',
+                  labelSelector: {
+                      matchLabels: {
+                          app: 'app'
+                      }
+                  },
+                  storageLocation: 's3',
+                  volumeSnapshotLocations: 'abc',
+                  ttl: '123',
+                  hooks: {
+                      resources: '12345'
+                  }
+              }
+          }, {
+              metadata: {
+                  name: 'uytuyuytuyt',
+                  namespace: 'velero',
+                  labels: {'aa1': 123, 'aa2': 444,'aa3': 555}
+              },
+              status: {
+                  phase: 'Completed',
+                  completionTimestamp: '2019-6-20',
+                  expiration: '2019-6-21',
+                  version: '1.0',
+                  startTimestamp: '2019-4-19',
+                  validationErrors: '',
+                  volumeSnapshotsAttempted: '',
+                  volumeSnapshotsCompleted: ''
+              },
+              spec: {
+                  includedNamespaces: ['velero', 'velero1'],
+                  excludedNamespaces: '',
+                  includedResourses: '*',
+                  excludedResourses: '<none>',
+                  includedClusterResourses: '',
+                  labelSelector: {
+                      matchLabels: {
+                          app: 'app'
+                      }
+                  },
+                  storageLocation: 's3',
+                  volumeSnapshotLocations: 'abc',
+                  ttl: '123',
+                  hooks: {
+                      resources: '12345'
+                  }
+              }
+          }, {
+              metadata: {
+                  name: 'csaccsw',
+                  namespace: 'velero',
+                  labels: {'aa1': 123, 'aa2': 444,'aa3': 555}
+              },
+              status: {
+                  phase: 'Completed',
+                  completionTimestamp: '2019-6-20',
+                  expiration: '2019-6-21',
+                  version: '1.0',
+                  startTimestamp: '2019-4-19',
+                  validationErrors: '',
+                  volumeSnapshotsAttempted: '',
+                  volumeSnapshotsCompleted: ''
+              },
+              spec: {
+                  includedNamespaces: ['velero', 'velero1'],
+                  excludedNamespaces: '',
+                  includedResourses: '*',
+                  excludedResourses: '<none>',
+                  includedClusterResourses: '',
+                  labelSelector: {
+                      matchLabels: {
+                          app: 'app'
+                      }
+                  },
+                  storageLocation: 's3',
+                  volumeSnapshotLocations: 'abc',
+                  ttl: '123',
+                  hooks: {
+                      resources: '12345'
+                  }
+              }
+          }
+      ]
+  });
 });
 
 app.get('/schedules', function(req, res) {
